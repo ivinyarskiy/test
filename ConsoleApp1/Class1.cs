@@ -1,78 +1,69 @@
 ﻿using System;
 
-/// <summary>
-/// Summary description for Class1
-/// </summary>
 public class Revers 
 {   
     //Принимает параметр - строку "слов", разделенных пробелами, и возвращает массив "слов"
-    private static string[] WordsArray (string iniStr)
+    private static string[] StringToArray(string iniStr)
         {
         string[] words = iniStr.Split(' ');
-        //int WordsCount = words.Length;
         return words;
         }
-
     //Принимает строку - "слово" - и возвращает "слово" с переставленными в обратном порядке буквами.
     private static string WordRev(string word)
     {
         int iniIndex = 0;
-        char[] WordArr= word.ToCharArray();
-        string RevWord = string.Empty;
+        char[] wordArr= word.ToCharArray();
+        string result = string.Empty;
 
         for (int i = 0; i < word.Length; i++)
         {
-            if (Char.IsLetter(WordArr[i]))
+            if (Char.IsLetter(wordArr[i]))
             {
                 iniIndex++;
             }
         }
-        char[] LttrsArr = new char[iniIndex];
-        int[] LtrPosition = new int[iniIndex];
+        char[] lttrsArr = new char[iniIndex];
+        int[] ltrPosition = new int[iniIndex];
         int lttrs = 0;
         for (int i = 0; i < word.Length; i++)
         {
-            if (Char.IsLetter(WordArr[i]))
+            if (Char.IsLetter(wordArr[i]))
             {
-                LttrsArr[lttrs] = WordArr[i];
+                lttrsArr[lttrs] = wordArr[i];
                 lttrs++;
             }
         }
-        Array.Reverse(LttrsArr);
+        Array.Reverse(lttrsArr);
         iniIndex = 0;
-        for (int i = 0; i < WordArr.Length; i++)
+        for (int i = 0; i < wordArr.Length; i++)
         {
-            if (Char.IsLetter(WordArr[i]))
+            if (Char.IsLetter(wordArr[i]))
             {
-                LtrPosition[iniIndex] = i;
+                ltrPosition[iniIndex] = i;
                 iniIndex++;
-
             }
         }
-        for (int a = 0; a < LttrsArr.Length; a++)
+        for (int a = 0; a < lttrsArr.Length; a++)
         {
-            WordArr[LtrPosition[a]] = LttrsArr[a];
+            wordArr[ltrPosition[a]] = lttrsArr[a];
         }
-
-        RevWord = new string(WordArr);
-        return RevWord;
+        result = new string(wordArr);
+        return result;
     }
-    
-    //основной метод, возвращающий строку из разделенных пробелами "слов" с переставленными в обратном порядке буквами.
-    public static string Reverser(string Words)
+    //Принимает строку из разделенных пробелами "слов", возвращает строку из разделенных пробелами "слов" с переставленными в обратном порядке буквами.
+    public static string Reverser(string inputString)
 	{
         string result = string.Empty;
-        string WrdRev = string.Empty;
-        string[] wrdsA = WordsArray(Words);
+        string wrdRev = string.Empty;
+        string[] wrdsA = StringToArray(inputString);
+        const string separ=" ";
 
         for (int i = 0; i < wrdsA.Length; i++)
         {
-            WrdRev= WordRev(wrdsA[i]);
+            wrdRev= WordRev(wrdsA[i]);
         
-            result = string.Concat(result, " ",WrdRev);
+            result = string.Concat(result, separ, wrdRev);
         }
-        
-        
         return result;  
     } 
  } 
