@@ -5,15 +5,20 @@
 /// </summary>
 public class Revers 
 {   
+    private static int WordCounter (string iniStr)
+        {
+        string[] words = iniStr.Split(' ');
+        int WordsCount = words.Length;
+        return WordsCount;
+        }
+
     public static string Reverser(string iniStr)
 	{
-                
         string rslt1=string.Empty;
         string result = string.Empty;
         string[] words = iniStr.Split(' ');
-        //int itr = words.Length;
-       
-            for (int k = 0; k < words.Length; k++)
+ 
+            for (int k = 0; k < WordCounter(iniStr); k++)
             {
                 int iniIndex = 0;
                 char[] iniStrArr = words[k].ToCharArray();
