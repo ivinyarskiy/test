@@ -5,75 +5,71 @@
 /// </summary>
 public class Revers 
 {   
-    private static int WordCounter (string iniStr)
+    private static string[] WordsArray (string iniStr)
         {
         string[] words = iniStr.Split(' ');
-        int WordsCount = words.Length;
-        return WordsCount;
+        //int WordsCount = words.Length;
+        return words;
         }
 
-    public static string Reverser(string iniStr)
-	{
-        string rslt1=string.Empty;
-        string result = string.Empty;
-        string[] words = iniStr.Split(' ');
- 
-            for (int k = 0; k < WordCounter(iniStr); k++)
+    private static string WordRev(string word)
+    {
+        int iniIndex = 0;
+        char[] WordArr= word.ToCharArray();
+        string RevWord = string.Empty;
+
+        for (int i = 0; i < word.Length; i++)
+        {
+            if (Char.IsLetter(WordArr[i]))
             {
-                int iniIndex = 0;
-                char[] iniStrArr = words[k].ToCharArray();
+                iniIndex++;
+            }
+        }
+        char[] LttrsArr = new char[iniIndex];
+        int[] LtrPosition = new int[iniIndex];
+        int lttrs = 0;
+        for (int i = 0; i < word.Length; i++)
+        {
+            if (Char.IsLetter(WordArr[i]))
+            {
+                LttrsArr[lttrs] = WordArr[i];
+                lttrs++;
+            }
+        }
+        Array.Reverse(LttrsArr);
+        iniIndex = 0;
+        for (int i = 0; i < WordArr.Length; i++)
+        {
+            if (Char.IsLetter(WordArr[i]))
+            {
+                LtrPosition[iniIndex] = i;
+                iniIndex++;
 
-                for (int i = 0; i < words[k].Length; i++)
-                {
+            }
+        }
+        for (int a = 0; a < LttrsArr.Length; a++)
+        {
+            WordArr[LtrPosition[a]] = LttrsArr[a];
+        }
 
-                    if (Char.IsLetter(iniStrArr[i]))
-                    {
-                        iniIndex++;
-                    }
-                }
-                char[] outStrArr = new char[iniIndex];
-                int[] LtrPosition = new int[iniIndex];
-                int lttrs = 0;
+        RevWord = new string(WordArr);
+        return RevWord;
+    }
+    
+    public static string Reverser(string Words)
+	{
+        string result = string.Empty;
+        string WrdRev = string.Empty;
+        string[] wrdsA = WordsArray(Words);
 
-                for (int i = 0; i < words[k].Length; i++)
-                {
-
-                    if (Char.IsLetter(iniStrArr[i]))
-                    {
-                        outStrArr[lttrs] = iniStrArr[i];
-                        lttrs++;
-
-                    }
-
-                }
-
-                Array.Reverse(outStrArr);
-                iniIndex = 0;
-                for (int i = 0; i < words[k].Length; i++)
-                {
-                    if (Char.IsLetter(iniStrArr[i]))
-                    {
-                        LtrPosition[iniIndex] = i;
-                        iniIndex++;
-
-                    }
-                }
-                for (int a = 0; a < outStrArr.Length; a++)
-                {
-                    iniStrArr[LtrPosition[a]] = outStrArr[a];
-                }
-
-                for (int z = 0; z < iniStrArr.Length; z++)
-                {
-                    rslt1 = string.Join(String.Empty, iniStrArr);
-
-
-                }
-            result = string.Concat(result," ", rslt1);
-                
-            } 
-
-        //Console.WriteLine(result);
+        for (int i = 0; i < wrdsA.Length; i++)
+        {
+            WrdRev= WordRev(wrdsA[i]);
+        
+            result = string.Concat(result, " ",WrdRev);
+        }
+        
+        
         return result;  
-} 
     } 
+ } 
