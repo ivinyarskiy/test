@@ -5,6 +5,7 @@
 /// </summary>
 public class Revers 
 {   
+    //Принимает параметр - строку "слов", разделенных пробелами, и возвращает массив "слов"
     private static string[] WordsArray (string iniStr)
         {
         string[] words = iniStr.Split(' ');
@@ -12,6 +13,7 @@ public class Revers
         return words;
         }
 
+    //Принимает строку - "слово" - и возвращает "слово" с переставленными в обратном порядке буквами.
     private static string WordRev(string word)
     {
         int iniIndex = 0;
@@ -56,6 +58,7 @@ public class Revers
         return RevWord;
     }
     
+    //основной метод, возвращающий строку из разделенных пробелами "слов" с переставленными в обратном порядке буквами.
     public static string Reverser(string Words)
 	{
         string result = string.Empty;
