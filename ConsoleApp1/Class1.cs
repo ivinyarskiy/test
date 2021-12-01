@@ -1,7 +1,23 @@
 ﻿using System;
 
 public class Revers 
-{   
+{
+    //Принимает строку из разделенных пробелами "слов", возвращает строку из разделенных пробелами "слов" с переставленными в обратном порядке буквами.
+    public static string Reverser(string inputString)
+    {
+        string result = string.Empty;
+        string wordReversed = string.Empty;
+        string[] wordFromArray = StringToArray(inputString);
+        const string separ = " ";
+
+        for (int i = 0; i < wordFromArray.Length; i++)
+        {
+            wordReversed = WordRev(wordFromArray[i]);
+
+            result = string.Concat(result, separ, wordReversed);
+        }
+        return result;
+    }
     //Принимает параметр - строку "слов", разделенных пробелами, и возвращает массив "слов"
     private static string[] StringToArray(string iniStr)
         {
@@ -50,20 +66,5 @@ public class Revers
         result = new string(wordArr);
         return result;
     }
-    //Принимает строку из разделенных пробелами "слов", возвращает строку из разделенных пробелами "слов" с переставленными в обратном порядке буквами.
-    public static string Reverser(string inputString)
-	{
-        string result = string.Empty;
-        string wrdRev = string.Empty;
-        string[] wrdsA = StringToArray(inputString);
-        const string separ=" ";
-
-        for (int i = 0; i < wrdsA.Length; i++)
-        {
-            wrdRev= WordRev(wrdsA[i]);
-        
-            result = string.Concat(result, separ, wrdRev);
-        }
-        return result;  
-    } 
+   
  } 
