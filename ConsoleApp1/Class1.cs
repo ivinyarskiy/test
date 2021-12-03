@@ -1,8 +1,16 @@
 ﻿using System;
 
-public class Revers 
+public class Revers
 {
-    //Принимает строку из разделенных пробелами "слов", возвращает строку из разделенных пробелами "слов" с переставленными в обратном порядке буквами.
+    /// <summary>
+    /// Takes a divided by spaces string and returns that string with letters placed backwords.
+    /// </summary>
+    /// <param name="inputString">
+    /// A divided by spaces string.
+    /// </param>
+    /// /// <returns>
+    /// Returns string with letters placed backwords.
+    /// </returns>
     public static string Reverser(string inputString)
     {
         string result = string.Empty;
