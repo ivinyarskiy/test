@@ -1,8 +1,4 @@
-﻿using System;
-
-public class Revers
-{
-    /// <summary>
+﻿    /// <summary>
     /// Takes a divided by spaces string and returns that string with letters placed backwords.
     /// </summary>
     /// <param name="inputString">
@@ -11,6 +7,11 @@ public class Revers
     /// /// <returns>
     /// Returns string with letters placed backwords.
     /// </returns>
+    using System;
+
+public class Revers
+{
+
     public static string Reverser(string inputString)
     {
         string result = string.Empty;
@@ -22,7 +23,8 @@ public class Revers
         {
             wordReversed = WordRev(wordFromArray[i]);
 
-            result = string.Concat(result, separ, wordReversed);
+            result = string.Concat(result, separ, wordReversed).TrimStart();
+            
         }
         return result;
     }

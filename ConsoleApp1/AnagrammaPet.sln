@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1.csproj", "{A1101772-B627-45FE-96CF-7607F7F01116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1.csproj", "{A1101772-B627-45FE-96CF-7607F7F01116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Revers_Test", "..\Revers_Test\Revers_Test.csproj", "{32803DB6-0911-4DBA-B519-6D2921C10CD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A1101772-B627-45FE-96CF-7607F7F01116}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1101772-B627-45FE-96CF-7607F7F01116}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1101772-B627-45FE-96CF-7607F7F01116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32803DB6-0911-4DBA-B519-6D2921C10CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32803DB6-0911-4DBA-B519-6D2921C10CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32803DB6-0911-4DBA-B519-6D2921C10CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32803DB6-0911-4DBA-B519-6D2921C10CD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
